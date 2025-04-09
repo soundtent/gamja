@@ -506,13 +506,18 @@ class FoldGroup extends Component {
 			];
 		}
 
-		return html`
-			<div class="logline" data-key=${msgs[0].key}>
-				${timestamp}
-				${" "}
-				${content}
-			</div>
-		`;
+		if (content.length > 0) {
+			return html`
+				<div class="logline" data-key=${msgs[0].key}>
+					${timestamp}
+					${" "}
+					${content}
+				</div>
+			`;
+		}
+		else {
+			return html``; /* For instance, when some 'has joined', 'has quit', or 'has left' messages have been removed */
+		}
 	}
 }
 
