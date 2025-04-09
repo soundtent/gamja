@@ -337,7 +337,17 @@ export default class App extends Component {
 			connectParams.nick = "user-*";
 		}
 		if (connectParams.nick && connectParams.nick.includes("*")) {
-			let placeholder = Math.random().toString(36).substr(2, 7);
+			// let placeholder = Math.random().toString(36).substr(2, 7);
+			let now = new Date();
+			let midnight = new Date(
+					now.getFullYear(),
+					now.getMonth(),
+					now.getDate(),
+					0,0,0)
+			let millis_since_midnight = now.getTime() - midnight.getTime();
+			let secs_since_midnight = Math.floor(millis_since_midnight/1000.0);
+			let placeholder = secs_since_midnight;
+
 			connectParams.nick = connectParams.nick.replace("*", placeholder);
 		}
 
