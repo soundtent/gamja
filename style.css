@@ -60,8 +60,8 @@ input {
 	}
 }
 
-.separator unread-separator {
-	display: none;
+.separator.unread-separator {
+	display: none !important;
 }
 
 /* DEFAULT THEME */
