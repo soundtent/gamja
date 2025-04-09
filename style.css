@@ -1,7 +1,19 @@
+/* CUSTOM THEME */
+
+@font-face
+{
+	font-family: 'UniversLTPro';
+	src: url('fonts/UniversLTPro-55Roman.otf') format('opentype');
+	/*src: url(../../fonts/UniversElse-Regular.ttf),url(../../fonts/UniversElse-Regular.woef);*/
+	/*src: url(/usr/share/kiwiirc/static/fonts/UniversElse-Regular.ttf),url(/usr/share/kiwiirc/static/fonts/UniversElse-Regular.woff);*/
+	/*src: url(fonts/webfonts/FluxischElse-Bold.woff);*/
+	font-weight: normal;
+}
+
 :root {
-	--main-background: white;
-	--main-color: black;
-	--sidebar-background: #e3e3e3;
+	--main-background: black;
+	--main-color: white;
+	--sidebar-background: black;
 	--expander-background: #b5b5b5;
 	--expander-background-hover: #a6a6a6;
 	--expander-border: #6c6c6c;
@@ -16,9 +28,39 @@
 	--danger-button-background-hover: #B20000;
 	--danger-button-border: #e3e3e3;
 
-	--green: green;
-	--gray: #4a4a4a;
+	--green: white;
+	--gray: white;
 }
+
+body {
+    font-family: UniversLTPro !important;
+    font-size: 16px !important;
+    line-height:20px !important;
+    font-weight: normal !important;
+	background: var(--main-background);
+}
+
+
+#buffer-list,
+#buffer-header {
+	display: none !important;
+}
+input {
+	color:white;
+}
+#composer {
+	border-top: 2px solid !important;
+}
+.expander {
+	display: none !important;
+}
+@media (min-width: 640px) {
+	#member-list {
+		border-left: 2px solid;
+	}
+}
+
+/* DEFAULT THEME */
 
 @media (prefers-color-scheme: dark) {
 	:root {
