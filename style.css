@@ -519,10 +519,10 @@ details summary[role="button"] {
 	border-color: #ddd;
 }
 #buffer .unread-separator {
-	color: #ff3535;
+	color: white;
 }
 #buffer .unread-separator::before, #buffer .unread-separator::after {
-	border-color: #ff3535;
+	border-color: white;
 }
 
 #error-msg {
