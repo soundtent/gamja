@@ -1,0 +1,10 @@
+{
+    "server": {
+                "url": "wss://irc.soundcamp.radio/websocket/",
+                "autojoin": "#acousticommons",
+        "auth": "optional",
+        "nick": "web_*",
+        "autoconnect": true,
+        "ping": 0
+        }
+}
