@@ -174,19 +174,21 @@ class LogLine extends Component {
 			}
 			break;
 		case "JOIN":
-			content = html`
-				${createNick(msg.prefix.name)} has joined
-			`;
+			// content = html`
+			// 	${createNick(msg.prefix.name)} has joined
+			// `;
+			content = html``;
 			break;
 		case "PART":
-			content = html`
-				${createNick(msg.prefix.name)} has left
-			`;
+			// content = html`
+			// 	${createNick(msg.prefix.name)} has left
+			// `;
 			break;
 		case "QUIT":
-			content = html`
-				${createNick(msg.prefix.name)} has quit
-			`;
+			// content = html`
+			// 	${createNick(msg.prefix.name)} has quit
+			// `;
+			content = html``;
 			break;
 		case "NICK":
 			let newNick = msg.params[0];
@@ -444,36 +446,36 @@ class FoldGroup extends Component {
 
 		let first = true;
 		let content = [];
-		["JOIN", "PART", "QUIT"].forEach((cmd) => {
-			if (byCommand[cmd].length === 0) {
-				return;
-			}
+		// ["JOIN", "PART", "QUIT"].forEach((cmd) => {
+		// 	if (byCommand[cmd].length === 0) {
+		// 		return;
+		// 	}
 
-			let nicks = new Set(byCommand[cmd].map((msg) => msg.prefix.name));
+		// 	let nicks = new Set(byCommand[cmd].map((msg) => msg.prefix.name));
 
-			let plural = nicks.size > 1;
-			let action;
-			switch (cmd) {
-			case "JOIN":
-				action = plural ? "have joined" : "has joined";
-				break;
-			case "PART":
-				action = plural ? "have left" : "has left";
-				break;
-			case "QUIT":
-				action = plural ? "have quit" : "has quit";
-				break;
-			}
+		// 	let plural = nicks.size > 1;
+		// 	let action;
+		// 	switch (cmd) {
+		// 	case "JOIN":
+		// 		action = plural ? "have joined" : "has joined";
+		// 		break;
+		// 	case "PART":
+		// 		action = plural ? "have left" : "has left";
+		// 		break;
+		// 	case "QUIT":
+		// 		action = plural ? "have quit" : "has quit";
+		// 		break;
+		// 	}
 
-			if (first) {
-				first = false;
-			} else {
-				content.push(", ");
-			}
+		// 	if (first) {
+		// 		first = false;
+		// 	} else {
+		// 		content.push(", ");
+		// 	}
 
-			content.push(createNickList([...nicks], createNick));
-			content.push(" " + action);
-		});
+		// 	content.push(createNickList([...nicks], createNick));
+		// 	content.push(" " + action);
+		// });
 
 		byCommand["NICK"].forEach((msg) => {
 			if (first) {
