@@ -69,9 +69,26 @@ input {
 	text-decoration: none !important;
 }
 
-#composer input::placeholder {
+input::placeholder {
 	opacity: 0.8;
 }
+
+#connect form input[type=username],
+#connect form input[type=password],
+#connect form input[type=text] {
+	box-shadow: none !important;
+	border: 1px solid white !important;
+	color: white;
+	background-color: black;
+	outline: none;
+	padding: 4px;
+}
+
+input[type="checkbox"] {
+	accent-color: white;
+	color: black;
+}
+
 
 /* DEFAULT THEME */
 
