@@ -64,6 +64,11 @@ input {
 	display: none !important;
 }
 
+.nick:hover,
+.timestamp:hover {
+	text-decoration: none !important;
+}
+
 /* DEFAULT THEME */
 
 @media (prefers-color-scheme: dark) {

@@ -53,10 +53,8 @@ class MemberItem extends Component {
 		return html`
 			<li>
 				<a
-					href=${irc.formatURL({ entity: this.props.nick, enttype: "user" })}
 					class=${classes.join(" ")}
 					title=${title}
-					onClick=${this.handleClick}
 				>
 					<${Membership} value=${this.props.membership}/>
 					${this.props.nick}

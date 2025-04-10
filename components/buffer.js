@@ -29,10 +29,9 @@ function Nick(props) {
 	let colorIndex = djb2(props.nick) % 16 + 1;
 	return html`
 		<a
-			href=${irc.formatURL({ entity: props.nick })}
 			title=${title}
 			class="nick nick-${colorIndex}"
-			onClick=${handleClick}
+			onClick=${(event) => event.preventDefault()}
 		>${props.nick}</a>
 	`;
 }
@@ -55,7 +54,6 @@ function _Timestamp({ date, url, showSeconds }) {
 	}
 	return html`
 		<a
-			href=${url}
 			class="timestamp"
 			title=${date.toLocaleString()}
 			onClick=${(event) => event.preventDefault()}
