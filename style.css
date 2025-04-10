@@ -69,6 +69,10 @@ input {
 	text-decoration: none !important;
 }
 
+#composer input::placeholder {
+	opacity: 0.8;
+}
+
 /* DEFAULT THEME */
 
 @media (prefers-color-scheme: dark) {
