@@ -544,10 +544,10 @@ details summary[role="button"] {
 	border-bottom: 1px solid transparent;
 }
 #buffer .date-separator {
-	color: #757575;
+	color: white;
 }
 #buffer .date-separator::before, #buffer .date-separator::after {
-	border-color: #ddd;
+	border-color: white;
 }
 #buffer .unread-separator {
 	color: white;
