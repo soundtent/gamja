@@ -33,53 +33,58 @@ export default class ScrollManager extends Component {
 	}
 
 	restoreScrollPosition() {
-		let target = this.props.target.current;
-		if (!target.firstChild) {
-			return;
-		}
+		// let target = this.props.target.current;
+		// if (!target.firstChild) {
+		// 	return;
+		// }
 
-		let stickToKey = store.get(this.props.scrollKey);
-		if (!stickToKey) {
-			target.firstChild.scrollIntoView({ block: "end" });
-		} else {
-			let stickTo = target.querySelector("[data-key=\"" + stickToKey + "\"]");
-			if (stickTo) {
-				stickTo.scrollIntoView();
-			}
-		}
+		// let stickToKey = store.get(this.props.scrollKey);
+		// if (!stickToKey) {
+		// 	// target.firstChild.scrollIntoView({ block: "end" });
+			
+		// 	//Scroll to bottom of page, e.g. latest message
+		// 	target.scrollTop = target.scrollHeight;
+		// } else {
+		// 	// Disable scrollTo if there is no stick (a stick SEEMS to be when the user is scrolled to the bottom of the page)
 
-		if (target.scrollTop === 0) {
-			this.props.onScrollTop();
-		}
+		// 	// let stickTo = target.querySelector("[data-key=\"" + stickToKey + "\"]");
+		// 	// if (stickTo) {
+		// 	// 	stickTo.scrollIntoView();
+		// 	// }
+		// }
+
+		// if (target.scrollTop === 0) {
+		// 	this.props.onScrollTop();
+		// }
 	}
 
 	handleScroll() {
-		if (this.props.target.current.scrollTop === 0) {
-			this.props.onScrollTop();
-		}
+		// if (this.props.target.current.scrollTop === 0) {
+		// 	this.props.onScrollTop();
+		// }
 	}
 
 	componentDidMount() {
-		this.restoreScrollPosition();
-		this.props.target.current.addEventListener("scroll", this.handleScroll);
+		// this.restoreScrollPosition();
+		// this.props.target.current.addEventListener("scroll", this.handleScroll);
 	}
 
 	getSnapshotBeforeUpdate(prevProps) {
-		if (this.props.scrollKey !== prevProps.scrollKey || this.props.children !== prevProps.children) {
-			this.saveScrollPosition(prevProps.scrollKey);
-		}
+		// if (this.props.scrollKey !== prevProps.scrollKey || this.props.children !== prevProps.children) {
+		// 	this.saveScrollPosition(prevProps.scrollKey);
+		// }
 	}
 
 	componentDidUpdate(prevProps) {
 		if (!this.props.target.current) {
 			return;
 		}
-		this.restoreScrollPosition();
+		// this.restoreScrollPosition();
 	}
 
 	componentWillUnmount() {
-		this.props.target.current.removeEventListener("scroll", this.handleScroll);
-		this.saveScrollPosition(this.props.scrollKey);
+		// this.props.target.current.removeEventListener("scroll", this.handleScroll);
+		// this.saveScrollPosition(this.props.scrollKey);
 	}
 
 	render() {
