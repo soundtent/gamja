@@ -40,12 +40,17 @@ export default class ScrollManager extends Component {
 
 		let stickToKey = store.get(this.props.scrollKey);
 		if (!stickToKey) {
-			target.firstChild.scrollIntoView({ block: "end" });
+			// target.firstChild.scrollIntoView({ block: "end" });
+			
+			//Scroll to bottom of page, e.g. latest message
+			target.scrollTop = target.scrollHeight;
 		} else {
-			let stickTo = target.querySelector("[data-key=\"" + stickToKey + "\"]");
-			if (stickTo) {
-				stickTo.scrollIntoView();
-			}
+			// Disable scrollTo if there is no stick (a stick SEEMS to be when the user is scrolled to the bottom of the page)
+
+			// let stickTo = target.querySelector("[data-key=\"" + stickToKey + "\"]");
+			// if (stickTo) {
+			// 	stickTo.scrollIntoView();
+			// }
 		}
 
 		if (target.scrollTop === 0) {

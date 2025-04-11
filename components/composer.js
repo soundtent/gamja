@@ -330,7 +330,7 @@ export default class Composer extends Component {
 
 		let placeholder = "Type a message";
 		if (this.props.commandOnly) {
-			placeholder = "Type a command (see /help)";
+			placeholder = "Type '/buffer #acousticommons' to return to chat. For other options, type '/help'";
 		}
 
 		return html`
