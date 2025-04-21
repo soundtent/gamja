@@ -455,13 +455,14 @@ details summary[role="button"] {
 #buffer .error {
 	color: red;
 }
-#buffer .me-tell {
+/* #buffer .me-tell {
 	color: #b37400;
 }
 #buffer .highlight .nick {
 	color: yellow;
 	background-color: #c700ff;
-}
+} */
+ 
 #buffer .nick-1 {
 	color: #f5f5b7;
 }
