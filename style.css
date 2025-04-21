@@ -14,23 +14,29 @@
 	/* Some of these variables are overwrittenby url parameters in url-parameters-to-css.js*/
 	--background-color: black;
 	--primary-color: white;
-	--sidebar-background: black;
+	
 	--expander-background: #b5b5b5;
 	--expander-background-hover: #a6a6a6;
 	--expander-border: #6c6c6c;
-
-	--button-color: #eff7ef;
-	--button-background: black;
-	--button-background-hover: black;
-	--button-border: #e3e3e3;
 
 	--danger-button-color: #eff7ef;
 	--danger-button-background: #db2626;
 	--danger-button-background-hover: #B20000;
 	--danger-button-border: #e3e3e3;
 
-	--green: white;
-	--gray: white;
+	--nick-color-1: rgb(214, 90, 90);
+    --nick-color-2: rgb(214, 142, 90);
+    --nick-color-3: rgb(214, 200, 90);
+    --nick-color-4: rgb(195, 214, 90);
+    --nick-color-5: rgb(137, 214, 90);
+    --nick-color-6: rgb(90, 214, 121);
+    --nick-color-7: rgb(90, 214, 186);
+    --nick-color-8: rgb(90, 179, 214);
+    --nick-color-9: rgb(90, 101, 214);
+    --nick-color-10: rgb(148, 90, 214);
+    --nick-color-11: rgb(210, 90, 214);
+    --nick-color-12: rgb(214, 90, 155);
+    --nick-color-13: rgb(214, 90, 112);
 }
 
 body {
@@ -47,7 +53,7 @@ body {
 	display: none !important;
 }
 input {
-	color:white;
+	color:var(--primary-color);
 }
 #composer {
 	border-top: 2px solid !important;
@@ -72,23 +78,23 @@ input {
 
 input::placeholder {
 	opacity: 0.8;
-	color: white;
+	color: var(--primary-color);
 }
 
 #connect form input[type=username],
 #connect form input[type=password],
 #connect form input[type=text] {
 	box-shadow: none !important;
-	border: 1px solid white !important;
-	color: white;
-	background-color: black;
+	border: 1px solid var(--primary-color) !important;
+	color: var(--primary-color);
+	background-color: var(--background-color);
 	outline: none;
 	padding: 4px;
 }
 
 input[type="checkbox"] {
-	accent-color: white;
-	color: black;
+	accent-color: var(--primary-color);
+	color: var(--background-color);
 }
 
 
@@ -120,19 +126,19 @@ noscript {
 }
 
 button {
-	background: var(--button-background);
+	background: var(--background-color);
 	transition: background 0.25s linear;
-	color: var(--button-color);
+	color: var(--primary-color);
 	padding: 0.25rem 0.5rem;
 	border-style: solid;
-	border-color: var(--button-border);
+	border-color: var(--primary-color);
 	border-width: 1px;
 	font-size: 0.8rem;
 	cursor: pointer;
 }
 
 button:hover {
-	background: var(--button-background-hover);
+	background: var(--background-color);
 }
 
 button.danger {
@@ -160,7 +166,7 @@ button.danger:hover {
 	width: 100%;
 	height: 100%;
 
-	background-color: var(--sidebar-background);
+	background-color: var(--background-color);
 	grid-column: 1;
 	grid-row: 1 / 4;
 
@@ -218,8 +224,8 @@ button.danger:hover {
 	color: #22009b;
 }
 #buffer-list li.active a {
-	color: white;
-	background-color: var(--gray);
+	color: var(--primary-color);
+	background-color: var(--primary-color);
 }
 #buffer-list li:not(.type-server) a {
 	padding-left: 20px;
@@ -230,14 +236,14 @@ button.danger:hover {
 	background-color: var(--background-color);
 	box-sizing: border-box;
 	padding: 5px 10px;
-	border-bottom: 1px solid var(--sidebar-background);
+	border-bottom: 1px solid var(--background-color);
 }
 
 #buffer-header {
 	color: var(--primary-color);
 	background-color: var(--background-color);
 	box-sizing: border-box;
-	border-bottom: 1px solid var(--sidebar-background);
+	border-bottom: 1px solid var(--background-color);
 
 	grid-row: 1;
 	grid-column: 2;
@@ -270,7 +276,7 @@ button.danger:hover {
 }
 
 #buffer-header .status-here {
-	color: var(--green);
+	color: var(--primary-color);
 }
 #buffer-header .status-gone {
 	color: orange;
@@ -313,7 +319,7 @@ button.danger:hover {
 }
 
 #member-list-header {
-	border-left: 1px solid var(--sidebar-background);
+	border-left: 1px solid var(--background-color);
 }
 
 @media (max-width: 640px) {
@@ -347,7 +353,7 @@ button.danger:hover {
 	box-sizing: border-box;
 }
 #member-list li a.away {
-	color: var(--gray);
+	color: var(--primary-color);
 }
 
 .membership.owner {
@@ -357,7 +363,7 @@ button.danger:hover {
 	color: blue;
 }
 .membership.operator {
-	color: var(--green);
+	color: var(--primary-color);
 }
 .membership.halfop {
 	color: orange;
@@ -371,7 +377,7 @@ button.danger:hover {
 	background: var(--background-color);
 	grid-row: 3;
 	grid-column: 2 / 3;
-	border-top: 1px solid var(--sidebar-background);
+	border-top: 1px solid var(--background-color);
 }
 #composer input {
 	display: block;
@@ -415,7 +421,7 @@ form input[type="search"] {
 }
 
 a {
-	color: var(--green);
+	color: var(--primary-color);
 }
 #buffer-list li a, a.timestamp, a.nick {
 	text-decoration: none;
@@ -425,7 +431,7 @@ a.nick {
 	color: var(--primary-color);
 }
 a.timestamp {
-	color: var(--gray);
+	color: var(--primary-color);
 }
 #buffer-list li a:hover, #buffer-list li a:active,
 a.timestamp:hover, a.timestamp:active,
@@ -440,7 +446,7 @@ details summary[role="button"] {
 
 #buffer {
 	box-sizing: border-box;
-	color: var(--gray);
+	color: var(--primary-color);
 	word-wrap: break-word;
 }
 #buffer .logline-list {
@@ -465,43 +471,43 @@ details summary[role="button"] {
 } */
  
 #buffer .nick-1 {
-	color: #f5f5b7;
+	color: var(--nick-color-1);
 }
 #buffer .nick-2 {
-	color: #de4501;
+	color: var(--nick-color-2);
 }
 #buffer .nick-3 {
-	color: #5d4016;
+	color: var(--nick-color-3);
 }
 #buffer .nick-4 {
-	color: #ebd999;
+	color: var(--nick-color-4);
 }
 #buffer .nick-5 {
-	color: #a6d50d;
+	color: var(--nick-color-5);
 }
 #buffer .nick-6 {
-	color: #b9a601;
+	color: var(--nick-color-6);
 }
 #buffer .nick-7 {
-	color: #0e75ff;
+	color: var(--nick-color-7);
 }
 #buffer .nick-8 {
-	color: #6e66d5;
+	color: var(--nick-color-8);
 }
 #buffer .nick-9 {
-	color: #0057b9;
+	color: var(--nick-color-9);
 }
 #buffer .nick-10 {
-	color: #65aa8e;
+	color: var(--nick-color-10);
 }
 #buffer .nick-11 {
-	color: #00d873;
+	color: var(--nick-color-11);
 }
 #buffer .nick-12 {
-	color: #1b8f14;
+	color: var(--nick-color-12);
 }
 #buffer .nick-13 {
-	color: white;
+	color: var(--nick-color-13);
 }
 
 #buffer .separator {
@@ -517,20 +523,20 @@ details summary[role="button"] {
 	border-bottom: 1px solid transparent;
 }
 #buffer .date-separator {
-	color: white;
+	color: var(--primary-color);;
 }
 #buffer .date-separator::before, #buffer .date-separator::after {
-	border-color: white;
+	border-color: var(--primary-color);;
 }
 #buffer .unread-separator {
-	color: white;
+	color: var(--primary-color);;
 }
 #buffer .unread-separator::before, #buffer .unread-separator::after {
-	border-color: white;
+	border-color: var(--primary-color);;
 }
 
 #error-msg {
-	color: white;
+	color: var(--primary-color);;
 	background-color: red;
 	position: fixed;
 	bottom: 2rem;
@@ -566,7 +572,7 @@ details summary[role="button"] {
 	margin: 20px auto;
 	max-width: 500px;
 	padding: 15px;
-	border: 1px solid white;
+	border: 1px solid var(--primary-color);;
 }
 .dialog .dialog-header {
 	display: flex;
@@ -601,9 +607,9 @@ details summary[role="button"] {
 }
 
 kbd {
-	background-color: black;
-	border: 1px solid #bfbfbf;
-	box-shadow: inset 0 1px 0 0 #fff, inset 0 -2px 0 0 #d9d9d9;
+	background-color: var(--background-color);
+	border: 1px solid var(--primary-color);
+	box-shadow: inset 0 1px 0 0 var(--primary-color), inset 0 -2px 0 0 var(--primary-color);
 	display: inline-block;
 	font-size: 80%;
 	margin: 3px;
