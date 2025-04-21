@@ -26,25 +26,30 @@ function Nick(props) {
 		title = stripANSI(props.user.realname);
 	}
 
-	// let colorIndex = djb2(props.nick) % 13 + 1;
+	let params = new URLSearchParams(window.location.search);
+	let nickcolors_param = params.get('nickcolors')
+	if (nickcolors_param == "manual") {
 
-	let colorIndex = 13; //13  = unknown/other = white
-	let digitStrings = ["0", "1","2","3","4","5","6","7","8","9"];
-	let afterLastBracket = props.nick.split("(").at(-1);
+		var colorIndex = 13; //13  = unknown/other = white
+		let digitStrings = ["0", "1","2","3","4","5","6","7","8","9"];
+		let afterLastBracket = props.nick.split("(").at(-1);
 
-	if (afterLastBracket.slice(-1) == ")" && digitStrings.includes(afterLastBracket[0])) {
-		if (afterLastBracket.length == 2) { //one digit
-			if (digitStrings.includes(afterLastBracket[0])) {
-				colorIndex = afterLastBracket[0]*1;
+		if (afterLastBracket.slice(-1) == ")" && digitStrings.includes(afterLastBracket[0])) {
+			if (afterLastBracket.length == 2) { //one digit
+				if (digitStrings.includes(afterLastBracket[0])) {
+					colorIndex = afterLastBracket[0]*1;
+				}
 			}
-		}
-		else if (afterLastBracket.length == 3) { //two digits
-			if (afterLastBracket[0] == "1" && digitStrings.includes(afterLastBracket[1])) {
-				colorIndex = (afterLastBracket[0]+afterLastBracket[1])*1;
+			else if (afterLastBracket.length == 3) { //two digits
+				if (afterLastBracket[0] == "1" && digitStrings.includes(afterLastBracket[1])) {
+					colorIndex = (afterLastBracket[0]+afterLastBracket[1])*1;
+				}
 			}
 		}
 	}
-
+	else {
+		var colorIndex = djb2(props.nick) % 13 + 1;
+	}
 
 	return html`
 		<a
