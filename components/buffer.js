@@ -26,7 +26,30 @@ function Nick(props) {
 		title = stripANSI(props.user.realname);
 	}
 
-	let colorIndex = djb2(props.nick) % 13 + 1;
+	// let colorIndex = djb2(props.nick) % 13 + 1;
+
+	let colorIndex = 13; //13  = unknown/other = white
+	let digitStrings = ["1","2","3","4","5","6","7","8","9"];
+	let afterLastBracket = props.nick.split("(").at(-1);
+
+	if (afterLastBracket.slice(-1) == ")" && digitStrings.includes(afterLastBracket[0])) {
+		if (afterLastBracket.length == 2) { //one digit
+			if (digitStrings.includes(afterLastBracket[0])) {
+				colorIndex = afterLastBracket[0]*1;
+			}
+		}
+		else if (afterLastBracket.length == 3) { //two digits
+			if (afterLastBracket[0] == "1" && digitStrings.includes(afterLastBracket[1])) {
+				colorIndex = (afterLastBracket[0]+afterLastBracket[1])*1;
+			}
+		}
+	}
+
+	console.log(afterLastBracket);
+	console.log(afterLastBracket.slice(-1) == ")");
+	console.log(digitStrings.includes(afterLastBracket[0]));
+	console.log(colorIndex);
+
 	return html`
 		<a
 			title=${title}
