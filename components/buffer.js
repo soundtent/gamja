@@ -26,7 +26,7 @@ function Nick(props) {
 		title = stripANSI(props.user.realname);
 	}
 
-	let colorIndex = djb2(props.nick) % 16 + 1;
+	let colorIndex = djb2(props.nick) % 13 + 1;
 	return html`
 		<a
 			title=${title}
