@@ -11,8 +11,9 @@
 }
 
 :root {
-	--main-background: black;
-	--main-color: white;
+	/* Some of these variables are overwrittenby url parameters in url-parameters-to-css.js*/
+	--background-color: black;
+	--primary-color: white;
 	--sidebar-background: black;
 	--expander-background: #b5b5b5;
 	--expander-background-hover: #a6a6a6;
@@ -37,7 +38,7 @@ body {
     font-size: 16px !important;
     line-height:20px !important;
     font-weight: normal !important;
-	background: var(--main-background);
+	background: var(--background-color);
 }
 
 
@@ -145,8 +146,8 @@ button.danger:hover {
 }
 
 #buffer, #connect {
-	color: var(--main-color);
-	background: var(--main-background);
+	color: var(--primary-color);
+	background: var(--background-color);
 	width: 100%;
 	height: 100%;
 	overflow-x: hidden;
@@ -154,8 +155,8 @@ button.danger:hover {
 }
 
 #buffer-list, #member-list {
-	color: var(--main-color);
-	background: var(--main-background);
+	color: var(--primary-color);
+	background: var(--background-color);
 	width: 100%;
 	height: 100%;
 
@@ -225,16 +226,16 @@ button.danger:hover {
 }
 
 #member-list-header {
-	color: var(--main-color);
-	background-color: var(--main-background);
+	color: var(--primary-color);
+	background-color: var(--background-color);
 	box-sizing: border-box;
 	padding: 5px 10px;
 	border-bottom: 1px solid var(--sidebar-background);
 }
 
 #buffer-header {
-	color: var(--main-color);
-	background-color: var(--main-background);
+	color: var(--primary-color);
+	background-color: var(--background-color);
 	box-sizing: border-box;
 	border-bottom: 1px solid var(--sidebar-background);
 
@@ -366,8 +367,8 @@ button.danger:hover {
 }
 
 #composer {
-	color: var(--main-color);
-	background: var(--main-background);
+	color: var(--primary-color);
+	background: var(--background-color);
 	grid-row: 3;
 	grid-column: 2 / 3;
 	border-top: 1px solid var(--sidebar-background);
@@ -421,7 +422,7 @@ a {
 }
 #buffer-list li a,
 a.nick {
-	color: var(--main-color);
+	color: var(--primary-color);
 }
 a.timestamp {
 	color: var(--gray);
@@ -450,7 +451,7 @@ details summary[role="button"] {
 	overflow: auto;
 }
 #buffer .talk, #buffer .motd {
-	color: var(--main-color);
+	color: var(--primary-color);
 }
 #buffer .error {
 	color: red;
@@ -560,8 +561,8 @@ details summary[role="button"] {
 	overflow: auto;
 }
 .dialog .dialog-body {
-	background-color: var(--main-background);
-	color: var(--main-color);
+	background-color: var(--background-color);
+	color: var(--primary-color);
 	margin: 20px auto;
 	max-width: 500px;
 	padding: 15px;
