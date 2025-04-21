@@ -29,7 +29,7 @@ function Nick(props) {
 	// let colorIndex = djb2(props.nick) % 13 + 1;
 
 	let colorIndex = 13; //13  = unknown/other = white
-	let digitStrings = ["1","2","3","4","5","6","7","8","9"];
+	let digitStrings = ["0", "1","2","3","4","5","6","7","8","9"];
 	let afterLastBracket = props.nick.split("(").at(-1);
 
 	if (afterLastBracket.slice(-1) == ")" && digitStrings.includes(afterLastBracket[0])) {
@@ -45,10 +45,6 @@ function Nick(props) {
 		}
 	}
 
-	console.log(afterLastBracket);
-	console.log(afterLastBracket.slice(-1) == ")");
-	console.log(digitStrings.includes(afterLastBracket[0]));
-	console.log(colorIndex);
 
 	return html`
 		<a
